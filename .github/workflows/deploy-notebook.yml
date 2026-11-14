@@ -87,7 +87,7 @@ jobs:
       run: |
         DEST_HOST=${{ secrets.DATABRICKS_DEST_HOST }}
         DEST_TOKEN=${{ secrets.DATABRICKS_DEST_TOKEN }}
-        CLUSTER_NAME="cluster_SD"
+        CLUSTER_NAME="CLUSTERJI"
         
         echo "Buscando cluster existente: $CLUSTER_NAME"
         
@@ -236,7 +236,7 @@ jobs:
           echo ""
           echo "🖥️  Cluster configurado:"
           echo "Cluster ID: $(echo "$job_details" | jq -r '.settings.tasks[0].existing_cluster_id')"
-          echo "Cluster Name: cluster_SD (reutilizado)"
+          echo "Cluster Name: CLUSTERJI (reutilizado)"
           
         else
           echo "❌ No se pudo encontrar el workflow creado"
@@ -258,6 +258,6 @@ jobs:
         echo "Tareas configuradas:"
         echo "   - tarea1_notebook1 (ntbk_1)"
         echo "   - tarea2_notebook2 (ntbk_2)"
-        echo "Cluster existente: cluster_SD configurado"
+        echo "Cluster existente: CLUSTERJI configurado"
         echo ""
         echo "🔗 Accede a tu workspace de Databricks para ver el workflow en la sección 'Workflows'"
