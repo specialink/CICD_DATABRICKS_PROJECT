@@ -18,7 +18,7 @@ jobs:
         ORIGIN_HOST=${{ secrets.DATABRICKS_ORIGIN_HOST }}
         ORIGIN_TOKEN=${{ secrets.DATABRICKS_ORIGIN_TOKEN }}
         NOTEBOOK_BASE="/Workspace/Users/clavijorosario@gmail.com/CICD_DATABRICKS_PROJECT"
-        NOTEBOOKS=("1.Preparacion_Ambiente" "2.Ingest_stores" "2.Ingest_train" "2.Ingest_transactions" "3.Transform" "4.Load" "5.Grants_Medallion")  # Agrega más según necesitesas
+        NOTEBOOKS=("1.Preparacion_Ambiente" "2.ingestion_bronze" "3.transformaciones_silver" "4.gold_analitica" "5.Grants_Medallion")  # Agrega más según necesitesas
         mkdir -p notebooks_to_deploy
         for nb in "${NOTEBOOKS[@]}"; do
           echo "Exportando $nb en modo raw..."
@@ -171,7 +171,7 @@ jobs:
             "environment": "production",
             "created_by": "github_actions",
             "project": "automated_deployment",
-            "cluster_used": "cluster_SD"
+            "cluster_used": "clusterJI"
           }
         }
         EOF
